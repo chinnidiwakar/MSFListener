@@ -47,15 +47,15 @@ elif (PAYLOAD == "5"):
 else:
 	print ("Wrong Option Taken, Try Again")
 
-
+print ("\nStarting The Listener...\n")
+print ("Please Wait It Might Take A While...\n")
 
 #Creates A Ninja Command For The All Options Taken By User
 command = "use exploit/multi/handler;set PAYLOAD "+p+";set LHOST "+str(LHOST)+";set LPORT "+str(LPORT)+";exploit -j"
 
 #Postgresql Will Be Started
 subprocess.call(["service","postgresql","start"])
-print ("\nStarting The Listener...\n")
-print ("Please Wait It Might Take A While...\n")
+
 #Ninja Command Will Be Executed
 subprocess.call(["msfconsole", "-q" ,"-x", command])
 
